@@ -3,7 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>나의 첫 HTML 페이지</title>
+    <style>
+      span {
+        color: red;
+      }
+      a:hover {
+        color: aqua;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <h1>안녕하세요 !</h1>
+    <p>이것은 첫 번째 단락입니다</p>
+    <p>
+      HTML은 웹 페이지의 <span>표준 마크업 언어</span>
+      HTML을 사용하면 나만의 웹사이트를 만들수 있습니다 HTML은 배우기 쉬우므로
+      즐겁게 사용할 수 있습니다
+    </p>
+    <span>span 영역입니다</span>
+    <p>이것은 세 번째 단락입니다</p>
+
+    <!-- <head></head>
+    <main>
+        <section></section>
+        <aside></aside>
+    </main>
+    <footer></footer>
+
+    <h3></h3> -->
+
+    <div>
+        <div>&lt; h1 &gt;~ &lt; h6 &gt;</div>
+      <h1>this is heading 1<h1>
+      <h2>this is heading 2</h2>
+      <h3>this is heading 3</h3>
+
+      <p>This is a paragraph</p>
+      <p>This is another paragraph</p>
+
+      <a href="https://www.naver.com/">This is safehomes link</a>
+
+      
+      <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu-JPb-KB-j3t1zkg7JfQB-nIglnXsCx_Jr1xj9lNqZg&s" alt="Ryan"> -->
+      
+    </div>
+    <hr/>
+    <h2 style="border: 2px solid blue;">이미지 띄우기</h2>
+    <img src="./img/img.png" alt="github">
+
+    <h2 style="background-color: blueviolet;">장바구니 목록</h2>
+    <ul>
+        <li>사과</li>
+        <li>바나나</li>
+        <li>딸기</li>
+    </ul>
+    <table>
+        <tr>
+            <th>과일</th>
+            <th>수량</th>
+        </tr>
+        <tr>
+            <td>사과</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>바나나</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>딸기</td>
+            <td>3</td>
+        </tr>
+    </table>
+    <h3 style="background-color: aqua;">form 태그</h3>
+<form>
+    <label>이름: </label><input type="text" required />
+    <br/>
+    <br>
+    <label>이메일: </label><input type="email"required />
+    <br/>
+    <br>
+    <label>비밀번호: </label><input type="password" required />
+    <br>
+    <br>
+    <input type="submit" value="가입하기">
+</form>
+    <a href="https://udemy.com" target="_blank">Visit udemy</a>
+    <!-- <a href="">Send email</a> -->
+    <hr>
+    <iframe src="index.html" style="border:none; width: 100%" title="iframe"></iframe>
+  </body>
 </html>
