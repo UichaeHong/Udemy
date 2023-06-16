@@ -5,15 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      p {
+      /* p {
         /* color: blue !important; */
+      /* } */
+      /* .item1 {
+        background-image: url("../img/img.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .item {
+        background-color: bisque;
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        display: inline-block;
+      } */
+      /* .box {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        /* border: 2px dotted red;
+        border-radius: 20px; */
+      /* background-color: aqua;
+        z-index: 2;
+      } */
+      /* .box2 {
+        position: absolute;
+        top: 150px;
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        z-index: 0;
+      } */
+      .div {
+        position: relative;
+        display: inline-block;
+        background-color: antiquewhite;
+        padding: 20px;
+      }
+      .div span {
+        width: 50px;
+        height: 30px;
+        font-size: xx-large;
+      }
+
+      .box {
+        background-color: beige;
+        margin-top: 10px;
+        padding: 20px;
+        width: 100px;
+        display: none;
+        position: absolute;
+        left: 20px;
+        z-index: 1;
+        font-size: large;
+      }
+      .box div {
+        display: block;
+      }
+      .div:hover .box {
+        display: block;
       }
     </style>
   </head>
   <body>
-    <p style="border: 2px solid red">일반 테두리</p>
+    <!-- <p style="border: 2px solid red">일반 테두리</p>
     <p style="border: 2px solid red; border-radius: 3px">둥근 테두리</p>
     <p style="border: 2px solid red; border-radius: 5px">더 둥근 테두리</p>
-    <p style="border: 2px solid red; border-radius: 7px">가장 둥근 테두리</p>
+    <p style="border: 2px solid red; border-radius: 7px">가장 둥근 테두리</p> -->
+
+    <!-- <div class="items" style="border: 2px solid black">
+      <div class="item">아이템1</div>
+      <div class="item">아이템2</div>
+      <div class="item">아이템3</div>
+    </div> -->
+
+    <!-- <div class="container">
+      <div class="item">아이템1</div>
+      <div class="item">아이템2</div>
+      <div class="item">아이템3</div>
+      <div class="item item1">아이템4</div>
+    </div> -->
+    <div class="div">
+      <span>메뉴</span>
+      <div class="box">
+        <div class="menu">항목</div>
+        <div class="menu">항목</div>
+        <div class="menu">항목</div>
+      </div>
+    </div>
   </body>
 </html>

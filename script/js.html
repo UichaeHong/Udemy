@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="value"></div>
+    <div class="class"></div>
+    <script>
+      //   let x = 5 + 5;
+      //   let y = "5" + 5;
+      //   let z = "hello" + 5;
+
+      //   console.log(x);
+      //   console.log(y);
+      //   console.log(z);
+      //   console.log(typeof x);
+      //   console.log(typeof y);
+      //   console.log(typeof x);
+
+      let length = 16;
+      let weight = 7.5;
+
+      let colot = "Yellow";
+      let lastName = "Johnson";
+
+      //   let x = true;
+      //   let y = false;
+
+      function myfunction(p1, p2) {
+        return p1 + p2;
+      }
+      console.log(myfunction(3, 4));
+
+      let hello = document.querySelector(".value");
+
+      let values = myfunction(3, 4);
+      hello.innerHTML = values;
+
+      const person = {
+        firstName: "jolhn",
+        lastNmae: "Doe",
+        fullName: function () {
+          return this.firstName + this.lastNmae;
+        },
+      };
+      console.log(person.fullName());
+
+      let test = document.querySelector(".class");
+
+      test.innerHTML = person.fullName();
+
+      //   ============ javascript 문자열 메서드 ============
+
+      // 문자열 길이 구하기
+      let text = "ABCDEFGHIJK";
+      let test1 = text.length;
+      console.log(test1);
+
+      // 문자열 잘라내기
+      let text2 = "Apple, Banana, Kiwi";
+      let test2 = text2.slice(7, 13);
+      console.log(test2);
+
+      // 문자열 체인지
+      let text3 = "Please visit Microsoft";
+      let test3 = text3.replace("Microsoft", "Apple");
+      console.log(test3);
+
+      // 문자열 대문자 변경
+      let text4 = "Hello World";
+      let test4 = text4.toUpperCase();
+      console.log(test4);
+
+      // 문자열 소문자 변경
+      let text5 = "Hello World";
+      let test5 = text5.toLocaleLowerCase();
+      console.log(test5);
+
+      // 문자열 합치기, 붙이기
+      let text6 = "Hello";
+      let Text6 = "World";
+      let test6 = text6.concat(" ", Text6);
+      console.log(test6);
+
+      //   ============ javascript 문자열 검색 ============
+      // 문자열을 찾을 때 찾는 문자가 없으면 -1 있으면 양수
+      let text7 = "Please locate where 'locate occurs!";
+      let test7 = text7.indexOf("John");
+      console.log(test7);
+
+      let text8 = "Please locate where 'locate occurs!";
+      let test8 = text8.indexOf("locate", 15);
+      console.log(test8);
+
+      //   ============ javascript 템플릿 리터럴 ============
+      let text9 = "Hello World";
+      let firstName9 = "John";
+      let lastName9 = "Doe";
+
+      let test9 = `welcome ${firstName9}, ${lastName9}`;
+      console.log(test9);
+    </script>
+  </body>
+</html>
