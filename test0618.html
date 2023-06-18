@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <button onclick="test()">나이</button> -->
+    <div class="hours"></div>
+    <script>
+      //   const test = {
+      //     height: 180,
+      //     male: "female",
+      //     from: "korea",
+      //   };
+
+      //   let mathScore = prompt("수학 점수 입력하기");
+      //   let engScore = prompt("영어 점수 입력하기");
+
+      //   let average = (Number(mathScore) + Number(engScore)) / 2;
+
+      //   console.log(average);
+
+      //   function multify(a, b) {
+      //     console.log(a + b);
+      //   }
+
+      //   multify(4, 6);
+
+      // 조건문
+
+      //   function test() {
+      //     let age = prompt();
+      //     if (age > 20) {
+      //       console.log("성인입니다");
+      //     } else if (age >= 17) {
+      //       console.log("고등학생입니다");
+      //     } else if (age >= 14) {
+      //       console.log("중학생입니다");
+      //     } else if (age >= 8) {
+      //       console.log("초등학생입니다");
+      //     } else {
+      //       console.log("영유아입니다");
+      //     }
+      //   }
+
+      //   let now = new Date().getHours();
+
+      //   let getMinute =getMinute()
+      let test = document.querySelector(".hours");
+
+      //   function getTime() {
+      //     const time = new Date();
+      //     const hour = time.gethours();
+      //     const minute = time.getminute();
+      //     const seconds = time.getseconds();
+      //     test.innerHTML = `${hour} + ":" + ${minute} + ":" + ${seconds}`;
+      //   }
+
+      //   function init() {
+      //     setInterval(getTime, 1000);
+      //   }
+      //   init();
+
+      function getTime() {
+        const time = new Date();
+        const hour = time.getHours();
+        const minutes = time.getMinutes();
+        const seconds = time.getSeconds();
+        test.innerHTML = hour + ":" + minutes + ":" + seconds;
+      }
+
+      function init() {
+        setInterval(getTime, 1000);
+      }
+
+      init();
+    </script>
+  </body>
+</html>
