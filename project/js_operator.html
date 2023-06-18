@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" class="int1" value="" />
+    <input type="number" class="int2" value="" />
+    <button onclick="int3()">더하기</button>
+
+    <div class="text"></div>
+
+    <script>
+      function int3() {
+        let int1 = document.querySelector(".int1");
+        let int2 = document.querySelector(".int2");
+        let text = document.querySelector(".text");
+        let i1 = Number(int1.value);
+        let i2 = Number(int2.value);
+
+        let result = i1 + i2;
+        console.log(result);
+
+        text.innerHTML = result;
+      }
+    </script>
+  </body>
+</html>

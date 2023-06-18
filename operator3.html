@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="calculator">
+        <div class="calculator__display--for-advanced">0</div>
+        <div class="calculator__buttons">
+          <div class="clear__and__enter">
+            <button class="clear">AC</button>
+            <button class="calculate">Enter</button>
+          </div>
+          <div class="button__row">
+            <button class="number">7</button>
+            <button class="number">8</button>
+            <button class="number">9</button>
+            <button class="operator">+</button>
+          </div>
+          <div class="button__row">
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
+            <button class="operator">-</button>
+          </div>
+          <div class="button__row">
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
+            <button class="operator">*</button>
+          </div>
+          <div class="button__row">
+            <button class="number double">0</button>
+            <button class="decimal">.</button>
+            <button class="operator">/</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const calculator = document.querySelector(".calculator");
+      const buttons = calculator.querySelector(".calculator__buttons");
+      const operator = document.querySelector(".calculator__operator");
+      const display = document.querySelector(
+        ".calculator__display--for-advanced"
+      );
+
+      function calculate(n1, operator, n2) {
+        let result = 0;
+        if (operator === "+") {
+          result = Number(n1) + Number(n2); // '+'버튼을 눌렀을 때
+        } else if (operator === "-") {
+          result = Number(n1) - Number(n2); // '-'버튼을 눌렀을 때
+        } else if (operator === "*") {
+          result = Number(n1) * Number(n2); // '*'버튼을 눌렀을 때
+        }
+        if (operator === "/") {
+          result = Number(n1) / Number(n2); // '/'버튼을 눌렀을 때
+        }
+        return String(result);
+      }
+
+      let firstNum = "";
+      let operatorForAdvanced = "";
+      let previousKey = "";
+      let previousNum = "";
+
+      buttons.addEventListener("click", function (event) {
+        const target = event.target;
+        const action = target.classList[0];
+        const buttonContent = target.textContent;
+
+        if (target.matches("button")) {
+          if (action === "number") {
+            if (display.textContent === "0" && operatorForAdvanced === "") {
+              display.textContent = buttonContent;
+              firstNum = display.textContent;
+            } else if (
+              display.textContent !== "0" &&
+              operatorForAdvanced === ""
+            ) {
+              display.textContent = display.textContent + buttonContent;
+              firstNum = display.textContent;
+            } else if (
+              display.textContent !== "0" &&
+              operatorForAdvanced !== ""
+            ) {
+              if (previousKey === operatorForAdvanced) {
+                display.textContent = buttonContent;
+                previousKey = display.textContent;
+                previousNum = display.textContent;
+              } else if (previousKey !== operatorForAdvanced) {
+                display.textContent = display.textContent + buttonContent;
+                previousNum = display.textContent;
+              }
+            }
+          }
+
+          if (action === "operator") {
+            operatorForAdvanced = buttonContent;
+            previousKey = operatorForAdvanced;
+          }
+
+          if (action === "clear") {
+            // AC(초기화) 버튼을 누를 때 분기
+            display.textContent = "0";
+            firstNum = "";
+            previousNum = "";
+            operatorForAdvanced = "";
+            previousKey = "";
+          }
+
+          if (action === "calculate") {
+            // Enter(계산) 버튼을 누를 때
+            if (firstNum !== "" && operatorForAdvanced === "") {
+              display.textContent = firstNum;
+            } else if (firstNum !== "" && previousNum === "") {
+              display.textContent = calculate(
+                display.textContent,
+                operatorForAdvanced,
+                display.textContent
+              );
+            } else if (previousKey === display.textContent) {
+              display.textContent = calculate(
+                firstNum,
+                operatorForAdvanced,
+                previousNum
+              );
+            } else if (
+              previousKey !== display.textContent &&
+              previousNum !== ""
+            ) {
+              display.textContent = calculate(
+                display.textContent,
+                operatorForAdvanced,
+                previousNum
+              );
+            } else if (
+              previousKey !== display.textContent &&
+              previousNum === ""
+            ) {
+              display.textContent = firstNum;
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -8,6 +8,7 @@
   <body>
     <div class="value"></div>
     <div class="class"></div>
+    <h1 id="demo"></h1>
     <script>
       //   let x = 5 + 5;
       //   let y = "5" + 5;
@@ -102,6 +103,15 @@
 
       let test9 = `welcome ${firstName9}, ${lastName9}`;
       console.log(test9);
+
+      //   ============ javascript HTML 리터럴 ============
+      let header = "Templetes Literals";
+      let tags = ["templete literals", "javascript", "es6"];
+
+      //   ============ javascript 배열
+
+      const fruit = ["banana", "orange", "apple", "mango"];
+      document.getElementById("demo").innerHTML = fruit.toString;
     </script>
   </body>
 </html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>getElementById</h1>
+    <p id="demo"></p>
+    <span></span>
+    <script>
+      // getElementById(id)
+      let test1 = document.getElementById("demo");
+      test1.innerHTML = "안녕";
+
+      // getElementByName(name)
+      //   let test2 = document.getElementsByName();
+
+      // let test3 = document.getElementsByTagName("span");
+
+      //   let test4 = document.getElementsByClassName
+
+      // =====================================================
+
+      // 기본 함수 정의 및 호출 , 화살표 함수 정의 및 호출
+      // 기본 함수
+      function add(a, b) {
+        return a + b;
+      }
+      const sum = add(3, 5);
+      console.log(sum);
+
+      // 화살표 함수
+      const add2 = (c, d) => {
+        return c + d;
+      };
+      const sum2 = add2(6, 7);
+      console.log(sum2);
+
+      // ====================================================
+      // 객체 비구조화 할당 vs 일반 객체
+      // ES6 추가
+
+      // 일반 객체 사용
+      const ironMan = {
+        name: "토니스타크",
+        actor: "로버트 다우니 주니어",
+        alias: "아이언맨",
+      };
+
+      console.log(ironMan.name);
+
+      // 객체 비구조화 할당
+      const ironMan2 = {
+        name: "토니스타크",
+        actor: "로버트 다우니 주니어",
+        alias: "아이언맨",
+      };
+      const { name, actor, alias } = ironMan2;
+      // 해당 키워드들은 ironMan2에서 가져오도록 설정
+      console.log(actor);
+
+      const onChange = (event) => {
+        const {
+          target: { value },
+        } = event;
+        console.log(value);
+      };
+
+      // =========================================================
+      // javascript 배열 선언
+      let arr = [1234, "test", true];
+      arr.length = 5;
+
+      arr[5] = "apple";
+      arr.push("banana");
+      console.log(arr);
+
+      // =========================================================
+      // javascript 반복문
+      for (let i = 0; i < 10; i++) {
+        console.log(i);
+      }
+    </script>
+  </body>
+</html>
