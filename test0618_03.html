@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="div"></div>
+    <script>
+      //   let name = prompt("이름을 입력하세요");
+      //   let age = prompt("나이를 입력하세요");
+
+      //   console.log(name);
+      //   console.log(age);
+      let browser = document.querySelector(".div");
+
+      function time() {
+        let a = new Date();
+        let test1 = a.getHours();
+        let test2 = a.getMinutes();
+        let test3 = a.getSeconds();
+
+        browser.innerHTML = test1 + ":" + test2 + ":" + test3;
+      }
+
+      function Brow() {
+        setInterval(time, 1000);
+      }
+      Brow();
+
+      console.log(Brow);
+
+      let x, y, z;
+      x = 5;
+      y = 9;
+      ++y;
+
+      console.log(y);
+      console.log(y);
+      console.log(y);
+    </script>
+  </body>
+</html>

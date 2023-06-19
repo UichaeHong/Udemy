@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Q1.
+      let a, b;
+      a = 4;
+      b = 10;
+
+      let c = 5 > a > 3 ? a + b : a * b;
+      console.log(c);
+      // =========================================
+
+      function sum(x, y) {
+        console.log(x + y);
+      }
+      sum(3, 6);
+
+      const sumArrow = (x, y) => x + y;
+      console.log(sumArrow(4, 6));
+
+      let person = {
+        name: "홍",
+        age: 23,
+        height: 180,
+        weight: 70,
+        carer: { 첫번째직장: "군대", 두번째직장: "세이프홈즈" },
+      };
+      person.belong = "세이프홈즈";
+
+      document.write(`제 이름은 ${person.name}입니다`);
+      document.write(`제 나이는 ${person.age}입니다`);
+
+      // ============= 배열 ===============
+
+      let fruit = ["사과", "수박", "복숭아", "딸기", "바나나"];
+      document.write(`과일 : ${fruit} <br>`);
+
+      let pop_fruit = fruit.pop();
+      document.write(`과일 pop: ${pop_fruit}<br>`);
+      document.write(`과일 : ${fruit} <br>`);
+
+      document.write(`과일 push : ${fruit.push(pop_fruit)} <br>`);
+      document.write(`과일 : ${fruit} <br>`);
+    </script>
+  </body>
+</html>
