@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="test" style="font-size: xx-large"></div>
+    <script>
+      // Q1.
+      let a, b;
+      a = 4;
+      b = 10;
+
+      let c = 5 > a > 3 ? a + b : a * b;
+      console.log(c);
+      // =========================================
+
+      function sum(x, y) {
+        console.log(x + y);
+      }
+      sum(3, 6);
+
+      const sumArrow = (x, y) => x + y;
+      console.log(sumArrow(4, 6));
+
+      let person = {
+        name: "홍",
+        age: 23,
+        height: 180,
+        weight: 70,
+        carer: { 첫번째직장: "군대", 두번째직장: "세이프홈즈" },
+      };
+      person.belong = "세이프홈즈";
+
+      document.write(`제 이름은 ${person.name}입니다`);
+      document.write(`제 나이는 ${person.age}입니다`);
+
+      // ============= 배열 ===============
+
+      let fruit = ["사과", "수박", "복숭아", "딸기", "바나나"];
+      document.write(`과일 : ${fruit} <br>`);
+
+      let pop_fruit = fruit.pop();
+      document.write(`과일 pop: ${pop_fruit}<br>`);
+      document.write(`과일 : ${fruit} <br>`);
+
+      document.write(`과일 push : ${fruit.push(pop_fruit)} <br>`);
+      document.write(`과일 : ${fruit} <br>`);
+
+      // 배열 합치기
+      function Arr(arr) {
+        return arr.join("");
+      }
+
+      const strings = ["Hello", " ", "World", "!"];
+      console.log(Arr(strings));
+
+      // include
+
+      let txt = "ABCDEFGHIJK";
+      document.write(txt.includes("ABC"), "<br>");
+      document.write(txt.startsWith("ABCD"), "<br>");
+      document.write(txt.endsWith("WIR"), "<br>");
+
+      // 조건문
+      let score = 69;
+      let money = 0;
+
+      if (score > 90) {
+        document.write("참 잘했습니다. <br>");
+        money += 10000;
+      } else if (score > 80) {
+        document.write("잘했습니다. <br>");
+        money += 5000;
+      } else if (score > 70) {
+        document.write("그냥 했습니다. <br>");
+        money += 1000;
+      } else {
+        money += 0;
+      }
+
+      // 날짜
+      switch (new Date().getDay()) {
+        case 0:
+          document.write("일요일입니다");
+          break;
+        case 1:
+          document.write("월요일입니다");
+          break;
+        case 2:
+          document.write("화요일입니다");
+          break;
+        case 3:
+          document.write("수요일입니다");
+          break;
+        case 4:
+          document.write("목요일입니다");
+          break;
+        case 5:
+          document.write("금요일입니다");
+          break;
+        case 6:
+          document.write("토요일입니다");
+          break;
+      }
+      console.log(new Date().getDay());
+
+      // 구구단 반복문
+      for (let i = 2; i < 10; i++) {
+        for (let j = 1; j < 10; j++) {
+          document.write(`${i} x ${j} = ${i * j} <br>`);
+        }
+      }
+
+      // 생성자
+
+      function Person(first, last, age) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+      }
+
+      const myFather = new Person("cheonwoo", "jeong", "50");
+      const mySister = new Person("sunyeong", "jeong", "22");
+
+      document.write(`아빠 나이는 ${myFather.age} <br>`);
+      document.write(`누나 나이는 ${mySister.age} <br>`);
+
+      // 디지털 시계
+      let test = document.querySelector(".test");
+
+      function getTime() {
+        const time = new Date();
+        const hour = time.getHours();
+        const minutes = time.getMinutes();
+        const seconds = time.getSeconds();
+        test.innerHTML = hour + ":" + minutes + ":" + seconds;
+      }
+
+      function init() {
+        setInterval(getTime, 1000);
+      }
+
+      init();
+    </script>
+  </body>
+</html>

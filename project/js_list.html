@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <fieldset style="width: 200px">
+      <div>
+        <div>사과</div>
+        <p>1000원</p>
+        <!-- <input type="button">장바구니에 추가</ㅑ> -->
+        <input type="button" value="장바구니에 추가" onclick="btn()" />
+      </div>
+    </fieldset>
+    <fieldset style="width: 200px">
+      <div>
+        <div>바나나</div>
+        <p>1500원</p>
+        <input type="button" value="장바구니에 추가" onclick="btn2()" />
+      </div>
+    </fieldset>
+    <div style="margin-top: 50px">장바구니</div>
+    <script>
+      function btn() {
+        let Btn = document.createElement("div");
+        document.body.appendChild(Btn);
+        Btn.innerHTML = "사과 - 1000원";
+      }
+      function btn2() {
+        let Btn2 = document.createElement("div");
+        document.body.appendChild(Btn2);
+        Btn2.innerHTML = "바나나 - 1500원";
+      }
+    </script>
+  </body>
+</html>
