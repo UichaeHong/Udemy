@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="weather"></div>
+    <script>
+      //   const weather = document.querySelector("#weather");
+
+      // 1. lat, lon 값을 가져와야한다.
+      // 2. weather api 접근해서 lat, lon, api, key값을 넣고 우리가 필요
+      // 3. 가져온 값을 화면에 뿌려준다
+
+      const weather = document.getElementById("weather");
+      const API_KEY = "0c4ca52422020340014545d6a956e18f";
+
+      function getWeather(lat, lon) {
+        console.log(lat, lon);
+        fetch(
+          `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`
+        )
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (json) {
+            console.log(json);
+            const temp = json.main.temp;
+            const humidity = json.main.humidity;
+            weather.innerHTML = `${temp} @ ${humidity}`;
+          });
+      }
+
+      function handleGeoSuccess(pos) {
+        console.log("pos===", pos);
+        console.log("coords ===", pos.coords);
+        const latitude = pos.coords.latitude; // 위도
+        const longitude = pos.coords.longitude; // 경도
+        // 위도, 경도 이 두개의 정보를 알아야 해당 위치에 대한 날씨를 알려줄 수 있음
+
+        // console.log(latitude);
+        // console.log(longitude);
+
+        getWeather(latitude, longitude);
+      }
+
+      function handleGeoError() {
+        console.log("Error");
+      }
+
+      function init() {
+        navigator.geolocation.getCurrentPosition(
+          handleGeoSuccess,
+          handleGeoError
+        );
+      }
+
+      init();
+    </script>
+  </body>
+</html>
