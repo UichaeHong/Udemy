@@ -4,29 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      button {
+        background-color: red;
+      }
+    </style>
   </head>
   <body>
+    <!-- todo list 만들기 -->
     <input type="text" class="text" onkeydown="onkey(event)" />
     <button onclick="submit()" class="myBtn">제출</button>
 
     <script>
+      //  기존 게시판 만들기에 remove 이벤트 사용하면 될듯
       const onkey = (event) => {
         if (event.key === "Enter") {
           submit();
         }
       };
+
+      // 제출 버튼을 눌렀을 때 동작하는 함수
       function submit() {
-        let text = document.querySelector(".text").value;
+        let text = document.querySelector(".text").value; // input값 정보 가져오기
         let myInput = document.querySelector(".myInput");
         let text2 = document.createElement("div");
         let text3 = document.createElement("div");
+        let btn = document.createElement("button");
 
         // let arr = [1, 2, 3, 4, 5, 6, 7, 8];
         let arr = [text];
         // forEach문
-        arr.forEach(function (element, index) {
+        arr.forEach(function (element) {
           document.body.appendChild(text3);
-          text3.innerHTML = `${index + 1}번째 게시물 <br> ${element}`;
+          text3.innerHTML = `${element} `;
+          btn.innerHTML = "삭제";
         });
       }
     </script>
