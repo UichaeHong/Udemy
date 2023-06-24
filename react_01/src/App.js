@@ -4,7 +4,10 @@
 // import Practice04 from "./components/04";
 // import Practice05 from "./components/05";
 
-import Todos from "./components/Practice_todolist";
+// 06/23 실습문제
+// import Id from "components/Practice";
+// import Login from "components/Practice";
+import TodoList from "components/Practice";
 
 function App() {
   return (
@@ -14,9 +17,12 @@ function App() {
       <Practice03 />
       <Practice04 />
       <Practice05 /> */}
-      <Todos
-        style={{ width: "100vw", height: "100vh", backgroundColor: "seagreen" }}
-      />
+      {/* <Todos/> */}
+
+      {/* 06/23 실습문제 */}
+      {/* <Id /> */}
+      {/* <Login /> */}
+      <TodoList />
     </>
   );
 }
